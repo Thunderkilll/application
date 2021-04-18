@@ -20,11 +20,11 @@ public class ServicesAdmin {
 	        try {
 	            
 	                  Statement ste = db.createStatement();
-	              String req1 = "INSERT INTO `offre` (`ID_Offre`, `Nom`, `DateD�but`, `DateFin` , `Prix_Offre`,`Produits`,`Qt_Offre`,`Nb_Participants`,`Note`) VALUES ('"+o.getID_Offre()+"','"+o.getNom()+"','"+o.getDateD�but()+"','"+o.getDateFin()+"','"+o.getPrix_Offre()+"','"+o.getProduits()+"','"+o.getQt_Offre()+"','"+o.getNb_Participants()+"','"+o.getNote()+"','"+i+"','"+0+"');";
+	              String req1 = "INSERT INTO `offre` (`ID_Offre`, `Nom`, `DateDébut`, `DateFin` , `Prix_Offre`,`Produits`,`Qt_Offre`,`Nb_Participants`,`Note`) VALUES ('"+o.getID_Offre()+"','"+o.getNom()+"','"+o.getDateDébut()+"','"+o.getDateFin()+"','"+o.getPrix_Offre()+"','"+o.getProduits()+"','"+o.getQt_Offre()+"','"+o.getNb_Participants()+"','"+o.getNote()+"','"+i+"');";
 	                         
 	              ste.executeUpdate(req1);
 	       
-	             System.out.println("Ajouté !!");
+	             System.out.println("AjoutÃ© !!");
 	              }
 	      catch (SQLException ex) {
 	           
@@ -44,7 +44,7 @@ public class ServicesAdmin {
 	while(result.next()){
 	       
 	        
-	        System.out.println("id = "+o.getID_Offre());//retourne l'id user qui est auto incrémenté dans la base 
+	        System.out.println("id = "+o.getID_Offre());//retourne l'id user qui est auto incrÃ©mentÃ© dans la base 
 	        PreparedStatement prep = db.prepareStatement("delete  from `offre` where id='"+ID_Offre+"'");
 	    
 	        prep.executeUpdate();
@@ -62,7 +62,7 @@ public class ServicesAdmin {
 	public void ModifierOffre(int t , Offre f) {
 	    try {   
 	       
-	  String sql1 = "UPDATE `offre`  SET `Nom`='" + f.getNom() + "',`DateD�but`='" + f.getDateD�but() +"',`DateFin`='"+f.getDateFin()+"',`Prix_Offre`= '"+f.getPrix_Offre()+"' ,`Produits` ='"+f.getProduits()+"',`Qt_Offre` ='"+f.getQt_Offre()+"',`Nb_Participants` ='"+f.getNb_Participants()+"',`Note` ='"+f.getNote()+"' WHERE id ='" +t+ "';";
+	  String sql1 = "UPDATE `offre`  SET `Nom`='" + f.getNom() + "',`DateDébut`='" + f.getDateDébut() +"',`DateFin`='"+f.getDateFin()+"',`Prix_Offre`= '"+f.getPrix_Offre()+"' ,`Produits` ='"+f.getProduits()+"',`Qt_Offre` ='"+f.getQt_Offre()+"',`Nb_Participants` ='"+f.getNb_Participants()+"',`Note` ='"+f.getNote()+"' WHERE id ='" +t+ "';";
 
 	   PreparedStatement ste1 = db.prepareStatement(sql1);
 	   ste1.executeUpdate();
@@ -86,7 +86,7 @@ public class ServicesAdmin {
 	                         
 	              ste.executeUpdate(req1);
 	       
-	             System.out.println("Ajouté !!");
+	             System.out.println("AjoutÃ© !!");
 	              }
 	      catch (SQLException ex) {
 	           
@@ -104,7 +104,7 @@ public class ServicesAdmin {
 	        while(result.next()){
 	               
 	               
-	                System.out.println("id = "+p.getID_Pack());//retourne l'id user qui est auto incrémenté dans la base 
+	                System.out.println("id = "+p.getID_Pack());//retourne l'id user qui est auto incrÃ©mentÃ© dans la base 
 	                PreparedStatement prep = db.prepareStatement("delete  from `offre` where id='"+ID_Pack+"'");
 	            
 	                prep.executeUpdate();
@@ -148,7 +148,7 @@ public class ServicesAdmin {
 	    Offre o2 = new Offre();
 	       
 	       o2.setNom(result.getString("nom"));
-	       o2.setDateD�but(result.getDate("dated�but"));
+	       o2.setDateDébut(result.getDate("datedébut"));
 	       o2.setDateFin(result.getDate("datefin"));
 	       o2.setPrix_Offre(result.getFloat("prix_Offre"));
 	       o2.setNb_Participants(result.getInt("nb_Participants"));
